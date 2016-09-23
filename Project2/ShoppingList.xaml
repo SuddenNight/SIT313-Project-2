@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Project2.ShoppingList"
+		Title="Shopping List" >
+
+<StackLayout.BackgroundColor>
+         <OnPlatform x:TypeArguments="Color"
+                     Android="#51C0D4"
+                     WinPhone="#51C0D4"
+                     iOS="#51C0D7">
+		</OnPlatform>
+</StackLayout.BackgroundColor>
+
+<ContentPage.Resources>
+	<ResourceDictionary>
+
+  <!-- DEFINE ANY CONSTANTS -->
+  <!-- https://developer.xamarin.com/guides/xamarin-forms/xaml/xaml-basics/xaml_markup_extensions/ -->
+			
+		<LayoutOptions x:Key="horzOptions"
+                     Alignment="Center" />
+
+      <LayoutOptions x:Key="vertOptions"
+                     Alignment="Center"
+                     Expands="True" />
+			
+		<Font x:Key="font">Large</Font>
+
+		
+	</ResourceDictionary>
+</ContentPage.Resources>
+	
+		<!-- https://matthewwaring.wordpress.com/2014/07/02/xamarin-forms-6-ways-to-create-listviews-and-tableviews-with-custom-cells/ -->
+		<!-- https://developer.xamarin.com/guides/xamarin-forms/user-interface/text/entry/ -->
+	
+<ContentPage.Content>
+        <StackLayout>
+        <Label Text="Shopping items"
+				HorizontalTextAlignment="Center"></Label>
+        <ListView x:Name="ListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" >
+                            <BoxView Color="Red"></BoxView>
+                            <StackLayout>
+                                <Label Text="{Binding item}"></Label>
+                                <Label Text="{Binding cost}"></Label>
+                            </StackLayout>
+                            <BoxView x:Name="boxView" Color="Blue" ></BoxView>
+                            </StackLayout>        
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    <Label Text="test{Binding Total}" 
+			HorizontalOptions="{StaticResource horzOptions}" />
+			
+	<Entry Placeholder="Input_Item" />
+
+	<Entry Placeholder="Input_Cost" />
+			
+	<Button Text="Add" 
+								Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}" />
+
+	<Button Text="Save" 
+								Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}" />
+			
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

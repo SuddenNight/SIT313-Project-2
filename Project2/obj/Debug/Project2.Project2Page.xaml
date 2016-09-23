@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Project2" 
+		x:Class="Project2.Project2Page"
+		Title="Home"
+		>
+
+<StackLayout.BackgroundColor>
+         <OnPlatform x:TypeArguments="Color"
+                     Android="#51C0D4"
+                     WinPhone="#51C0D4"
+                     iOS="#51C0D7">
+		</OnPlatform>
+</StackLayout.BackgroundColor>
+
+<ContentPage.Resources>
+	<ResourceDictionary>
+
+  <!-- DEFINE ANY CONSTANTS -->
+  <!-- https://developer.xamarin.com/guides/xamarin-forms/xaml/xaml-basics/xaml_markup_extensions/ -->
+			
+		<LayoutOptions x:Key="horzOptions"
+                     Alignment="Center" />
+
+      <LayoutOptions x:Key="vertOptions"
+                     Alignment="Center"
+                     Expands="True" />
+			
+		<Font x:Key="font">Large</Font>
+
+		
+	</ResourceDictionary>
+</ContentPage.Resources>
+	
+	<StackLayout>
+		
+	<!--
+		<Label Text="Shopping"
+           Font="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+		-->
+		
+		<Button Text="Start"
+			Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}"
+			Clicked="OnClickStart"/>
+		
+		<Button Text="History"
+			Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}"
+			Clicked="OnClickHistory" />
+		
+		<Button Text="Shop Sites"
+			Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}"
+			Clicked="OnClickSite" />
+		
+		<Button Text="Dev"
+			Font="{StaticResource font}"
+			HorizontalOptions="{StaticResource horzOptions}"
+            VerticalOptions="{StaticResource vertOptions}"
+			Clicked="OnClickDev" 
+			/>
+		
+	</StackLayout>
+	
+	
+</ContentPage>

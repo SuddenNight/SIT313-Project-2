@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Project2.History">
+
+
+		<StackLayout.BackgroundColor>
+         <OnPlatform x:TypeArguments="Color"
+                     Android="#51C0D4"
+                     WinPhone="#51C0D4"
+                     iOS="#51C0D7">
+		</OnPlatform>
+</StackLayout.BackgroundColor>
+
+<ContentPage.Resources>
+	<ResourceDictionary>
+
+  <!-- DEFINE ANY CONSTANTS -->
+  <!-- https://developer.xamarin.com/guides/xamarin-forms/xaml/xaml-basics/xaml_markup_extensions/ -->
+			
+	<LayoutOptions x:Key="horzOptions"
+                     Alignment="Center" />
+
+    <LayoutOptions x:Key="vertOptions"
+                     Alignment="Center"
+                     Expands="True" />
+			
+	<LayoutOptions x:Key="vertOptions2"
+                     Alignment="End"
+                     Expands="True" />
+			
+	<Font x:Key="font">Large</Font>
+
+		
+	</ResourceDictionary>
+</ContentPage.Resources>
+	
+	
+	<ContentPage.Content>
+
+		        <StackLayout>
+        <Label Text="Saved Lists" HorizontalTextAlignment="Center">
+			</Label>
+        <ListView x:Name="HistoryListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" >
+
+                            <StackLayout>
+                                <Label Text="{Binding number}"></Label>
+                             </StackLayout>
+                            
+                            </StackLayout>        
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+			
+			<Button Text="Home"
+							Font="{StaticResource font}"
+		HorizontalOptions="{StaticResource horzOptions}"
+        VerticalOptions="{StaticResource vertOptions2}" 
+			 />
+			
+        </StackLayout>
+
+		
+		
+	</ContentPage.Content>
+
+	
+</ContentPage>
