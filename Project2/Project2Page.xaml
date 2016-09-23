@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Project2" 
+		x:Class="Project2.Project2Page"
+		Title="Home"
+		>
+
+	<StackLayout>
+	<!--
+		<Label Text="Shopping"
+           Font="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+		-->
+		<Button Text="Start"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+			Clicked="OnClickStart"/>
+
+		<Button Text="History"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" 
+			 />
+
+		<Button Text="Shop Sites"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" 
+			 />
+
+		<Button Text="Dev"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" 
+			 
+			/>
+
+	</StackLayout>
+	
+	
+</ContentPage>

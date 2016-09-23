@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Project2.ShoppingList"
+		Title="Shopping List" >
+	
+		<!-- https://matthewwaring.wordpress.com/2014/07/02/xamarin-forms-6-ways-to-create-listviews-and-tableviews-with-custom-cells/ -->
+		<!-- https://developer.xamarin.com/guides/xamarin-forms/user-interface/text/entry/ -->
+	
+<ContentPage.Content>
+        <StackLayout>
+        <Label Text="Shopping iTems"></Label>
+        <ListView x:Name="NewsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" >
+                            <BoxView Color="Red"></BoxView>
+                            <StackLayout>
+                                <Label Text="{Binding Title}"></Label>
+                                <Label Text="{Binding NewsURL}"></Label>
+                            </StackLayout>
+                            <BoxView x:Name="boxView" Color="Blue" ></BoxView>
+                            </StackLayout>        
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    <Label Text="atest{Binding Total}" 
+       	HorizontalOptions="Center" />
+			
+	<Entry Placeholder="Input_Item" />
+
+	<Entry Placeholder="Input_Cost" />
+			
+	<Button Text="Add" 
+		HorizontalOptions="Center"
+        VerticalOptions="EndAndExpand" />
+
+	<Button Text="Save" 
+		HorizontalOptions="Center"
+        VerticalOptions="EndAndExpand" />
+			
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
